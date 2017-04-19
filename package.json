@@ -4,7 +4,8 @@
   "description": "Sistema de Gerenciamento do desktopcloud versao administrador",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "gulp",
+    "production": "gulp --production"
   },
   "repository": {
     "type": "git",
