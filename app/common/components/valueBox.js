@@ -1,20 +1,21 @@
-angular.module('managementAdminCloud').component('valueBox', {
-    bindings: {
-        grid: '@',
-        colorClass: '@',
-        value: '@',
-        text: '@',
-        iconClass: '@'
-    },
+(function () {
+    angular.module('managementAdminCloud').component('valueBox', {
+        bindings: {
+            grid: '@',
+            colorClass: '@',
+            value: '@',
+            text: '@',
+            iconClass: '@'
+        },
 
-    controller: [
-        'gridSystem',
-        function (gridSystem) {
-            this.$onInit = () => this.gridClasses = gridSystem.toCssClasses(this.grid)
-        }
-    ],
+        controller: [
+            'gridSystem',
+            function (gridSystem) {
+                this.$onInit = () => this.gridClasses = gridSystem.toCssClasses(this.grid)
+            }
+        ],
 
-    template: `
+        template: `
     <div class="{{ $ctrl.gridClasses }}">
         <div class="small-box {{ $ctrl.colorClass }}">
             <div class="inner">
@@ -27,4 +28,5 @@ angular.module('managementAdminCloud').component('valueBox', {
         </div>
     </div>
     `
-});
+    });
+})

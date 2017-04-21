@@ -1,14 +1,16 @@
-angular.module('managementAdminCloud').component('contentHeader', {
-    bindings: {
-        name: '@',
-        small: '@'
-    },
+(function () {
+    angular.module('managementAdminCloud').component('contentHeader', {
+        bindings: {
+            name: '@',
+            small: '@'
+        },
 
-    template: `
+        template: `
     <section class="content-header">
         <h1>{{$ctrl.name}}
             <small>{{$ctrl.small}}</small>
         </h1>
 </section>
     `
-});
+    });
+})()
