@@ -10,7 +10,7 @@ angular.module('managementAdminCloud').component('valueBox', {
     controller: [
         'gridSystem',
         function (gridSystem) {
-            this.gridClasses = gridSystem.toCssClasses(this.grid)
+            this.$onInit = () => this.gridClasses = gridSystem.toCssClasses(this.grid)
         }
     ],
 
