@@ -2,7 +2,8 @@
     <ul class="sidebar-menu">
         <li>
             <a ui-sref="dashboard">
-                <i class="fa fa-dashboard"></i><spa>Dashboard</spa>
+                <i class="fa fa-dashboard"></i>
+                <spa>Dashboard</spa>
             </a>
         </li>
         <li class="treeview">
@@ -13,19 +14,23 @@
 
             <ul class="treeview-menu">
                 <li>
-                    <a ui-sref="enterprise"><i class="fa fa-home"></i>Enterprises</a>
+                    <a ui-sref="contract">
+                        <i class="fa fa-file-text-o"></i>Contracts</a>
                 </li>
-            </ul>
 
-            <ul class="treeview-menu">
                 <li>
-                    <a><i class="fa fa-user"></i>Clients</a>
+                    <a ui-sref="enterprise">
+                        <i class="fa fa-building"></i>Enterprises</a>
                 </li>
-            </ul>
 
-            <ul class="treeview-menu">
                 <li>
-                    <a><i class="fa fa-com"></i>Servers</a>
+                    <a ui-sref="client">
+                        <i class="fa fa-group"></i>Clients</a>
+                </li>
+
+                <li>
+                    <a ui-sref="server">
+                        <i class="fa fa-server"></i>Server</a>
                 </li>
             </ul>
         </li>

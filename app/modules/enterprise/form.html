@@ -3,7 +3,7 @@
 <section class="content">
     <div class="nav-tabs-custom">
         <ul class="nav nav-tabs">
-            <li>
+            <li class="active">
                 <a href data-target="#tabRead" data-toggle="tab">
                     <i class="fa fa-bars"></i> List
                 </a>
@@ -25,10 +25,10 @@
             </li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane" id="tabCreate" ng-include="'enterprise/form.html'"></div>
-            <div class="tab-pane" id="tabRead" ng-include="'enterprise/read.html'"></div>
-            <div class="tab-pane" id="tabUpdate" ng-include="'enterprise/form.html'"></div>
-            <div class="tab-pane" id="tabDelete" ng-include="'enterprise/form.html'"></div>
+            <div class="tab-pane" id="tabCreate" ng-include="'modules/enterprise/crud_c.html'"></div>
+            <div class="tab-pane active" id="tabRead" ng-include="'modules/enterprise/crud_r.html'"></div>
+            <div class="tab-pane" id="tabUpdate" ng-include="'modules/enterprise/crud_c.html'"></div>
+            <div class="tab-pane" id="tabDelete" ng-include="'modules/enterprise/crud_c.html'"></div>
         </div>
     </div>
 </section>

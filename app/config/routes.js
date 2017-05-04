@@ -9,7 +9,19 @@ angular.module('managementAdminCloud').config([
             })
             .state('enterprise', {
                 url: '/enterprise',
-                templateUrl: 'enterprise/enterprise.html'
+                templateUrl: 'modules/enterprise/form.html'
+            })
+            .state('contract', {
+                url: '/contract',
+                templateUrl: 'modules/contract/form.html'
+            })
+            .state('client', {
+                url: '/client',
+                templateUrl: 'modules/client/form.html'
+            })
+            .state('server', {
+                url: '/server',
+                templateUrl: 'modules/server/form.html'
             });
 
         $urlRouterProvider.otherwise('dashboard')

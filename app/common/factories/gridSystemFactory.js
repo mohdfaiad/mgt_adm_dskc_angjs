@@ -11,7 +11,6 @@ angular.module('managementAdminCloud').factory('gridSystem', [function () {
         if (cols[3]) classes += ` col-lg-${cols[3]}`;
 
         return classes
-
     }
 
     return {toCssClasses}
