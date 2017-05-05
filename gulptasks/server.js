@@ -3,11 +3,12 @@ const watch = require('gulp-watch');
 const webserver = require('gulp-webserver');
 
 gulp.task('server', ['watch'], function () {
-    gulp.src('public').pipe(webserver({
-        livereload: true,
-        port: 8090,
-        open: true
-    }))
+    gulp.src('public')
+        .pipe(webserver({
+            livereload: true,
+            host: '',
+            port: 8090
+        }))
 });
 
 gulp.task('watch', function () {
