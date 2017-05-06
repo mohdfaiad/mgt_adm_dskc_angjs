@@ -1,70 +1,62 @@
-angular
-    .module('managementAdminCloud')
-    .controller('contractCtrl', [
+(function () {
+    angular
+        .module('managementAdminCloud')
+        .controller('contractCtrl', [
 
-        '$http',
-        'messagesFcty',
-        contractController
-    ]);
+            '$http',
+            'messagesFcty',
+            contractController
+        ]);
 
-function contractController($http, messagesFcty) {
+    function contractController($http, messagesFcty) {
 
-    const self = this;
+        const self = this;
+        const url = 'http://localhost:9080/api/contract';
 
-    self.post = function () {
+        self.refresh = function () {
 
-        $http({
+            $http({
 
-            method: 'POST',
-            url: 'http://localhost:9080/api/contract',
-            data: self.contract
-        })
-
-            .then(function (response) {
-
-                self.contract = {};
-                messagesFcty.addSuccess('Operacao realizada com sucesso');
-
-                console.log(response);
+                method: 'GET',
+                url: url
             })
 
-            .catch(function (response) {
+                .then(function (response) {
 
-                console.log(response);
-                messagesFcty.addError(response.err)
+                    self.contract = {};
+                    self.contracts = response
+
+                    console.log(response)
+                })
+
+                .catch(function (response) {
+
+                    console.log(response)
+                })
+
+        };
+
+        self.post = function () {
+
+            $http({
+
+                method: 'POST',
+                url: url,
+                data: self.contract
             })
+
+                .then(function () {
+
+                    self.refresh();
+                    messagesFcty.addSuccess('Operacao realizada com sucesso');
+                })
+
+                .catch(function (response) {
+
+                    messagesFcty.addError(response.err)
+                })
+        };
+
+        self.refresh();
     }
-}
-
-// angular
-//     .module('managementAdminCloud')
-//     .controller('contractCtrl', [
-//
-//         '$http',
-//         contractController
-//     ]);
-//
-// function contractController($http) {
-//
-//     const vm = this;
-//
-//     vm.create = function () {
-//
-//         const url = 'http://localhost:9080/api/contract';
-//
-//         $http.post(url, vm.contract)
-//
-//             .then(function (response) {
-//
-//                 vm.contract = {};
-//                 console.log(response);
-//                 console.log('Success' + response);
-//             })
-//
-//             .catch(function (response) {
-//
-//                 console.log(response);
-//                 console.log('Error' + response);
-//             })
-//     }
-// }
+})();
