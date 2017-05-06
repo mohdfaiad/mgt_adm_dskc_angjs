@@ -11,7 +11,7 @@
     function contractController($http, messagesFcty) {
 
         const self = this;
-        const url = 'http://localhost:9080/api/contract';
+        const url = 'http://54.233.82.242:9080/api/contract';
 
         self.refresh = function () {
 
@@ -24,7 +24,7 @@
                 .then(function (response) {
 
                     self.contract = {};
-                    self.contracts = response
+                    self.contracts = response;
 
                     console.log(response)
                 })

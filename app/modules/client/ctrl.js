@@ -12,7 +12,7 @@ function clientController($http) {
 
     vm.create = function () {
 
-        const url = 'http://localhost:9080/api/client';
+        const url = 'http://54.233.82.242:9080/api/client';
 
         $http.post(url, vm.client)
 

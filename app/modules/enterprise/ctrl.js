@@ -12,7 +12,7 @@ function enterpriseController($http) {
 
     vm.create = function () {
 
-        const url = 'http://localhost:9080/api/enterprise';
+        const url = 'http://54.233.82.242:9080/api/enterprise';
 
         $http.post(url, vm.enterprise)
 

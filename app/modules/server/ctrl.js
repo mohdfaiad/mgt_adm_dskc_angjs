@@ -12,7 +12,7 @@ function serverController($http) {
 
     vm.create = function () {
 
-        const url = 'http://localhost:9080/api/server';
+        const url = 'http://54.233.82.242:9080/api/server';
 
         $http.post(url, vm.server)
 
