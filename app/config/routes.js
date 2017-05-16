@@ -22,6 +22,10 @@ angular.module('managementAdminCloud').config([
             .state('server', {
                 url: '/server',
                 templateUrl: 'modules/server/form.html'
+            })
+            .state('exam', {
+                url: '/exam',
+                templateUrl: 'modules/exam/form.html'
             });
 
         $urlRouterProvider.otherwise('dashboard')

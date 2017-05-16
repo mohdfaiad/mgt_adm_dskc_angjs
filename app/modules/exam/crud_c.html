@@ -1,0 +1,29 @@
+<div role="form">
+    <div class="box-body">
+
+        <fields id="exm_contract_id"
+                label="Contract ID"
+                grid="12 6 4"
+                placeholder="Contract ID"
+                model="exmCtrl.exam.exm_contract_id"></fields>
+
+        <fields id="exm_name"
+                label="Name"
+                grid="12 6 4"
+                placeholder="Name"
+                model="exmCtrl.exam.exm_name"></fields>
+
+        <fields id="ctr_status"
+                label="Status"
+                grid="12 6 4"
+                placeholder="Status"
+                model="exmCtrl.exam.exm_status"></fields>
+    </div>
+
+    <div class="box-footer">
+        <button class="btn btn-primary" ng-click="exmCtrl.post()" ng-if="exmCtrl.tabCreate">Insert</button>
+        <button class="btn btn-info" ng-if="exmCtrl.tabUpdate">Edit</button>
+        <button class="btn btn-danger" ng-if="exmCtrl.tabDelete">Delete</button>
+        <button class="btn btn-default">Cancel</button>
+    </div>
+</div>
