@@ -2,23 +2,22 @@
     <table class="table">
         <thead>
         <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
             <th>Full Name</th>
             <th>E-Mail</th>
+            <th>Date Registration</th>
             <th>Actions</th>
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="contract in ctrCtrl.contracts"></tr>
-        <td>{{ contract.ctr_first_name }}</td>
-        <td>{{ contract.ctr_last_name }}</td>
-        <td>{{ contract.ctr_full_name }}</td>
-        <td>{{ contract.ctr_email }}</td>
-        <td class="table-actions">
-            <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-            <button class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
-        </td>
+        <tr ng-repeat="contract in ctrCtrl.contracts">
+            <td>{{contract.ctr_full_name}}</td>
+            <td>{{contract.ctr_email}}</td>
+            <td>{{contract.ctr_data_registration}}</td>
+            <td class="table-actions">
+                <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                <button class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+            </td>
+        </tr>
         </tbody>
     </table>
 </div>

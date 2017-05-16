@@ -4,36 +4,38 @@
         .controller('contractCtrl', [
 
             '$http',
-            'messagesFcty',
+            'messagesFtry',
+            'tabFtry',
             contractController
         ]);
 
-    function contractController($http, messagesFcty) {
+    function contractController($http, messagesFcty, tabFtry) {
 
-        const self = this;
-        const url = 'http://54.233.82.242:9080/api/contract';
+        const self  = this;
+        const url   = 'http://localhost:9080/api/contract';
 
         self.refresh = function () {
 
             $http({
 
                 method: 'GET',
-                url: url
+                url:    url
             })
-
                 .then(function (response) {
 
-                    self.contract = {};
-                    self.contracts = response;
+                    self.contract   = {};
+                    self.contracts  = response.data;
 
-                    console.log(response)
+                    tabFtry.show(self, {
+
+                        tabRead: true,
+                        tabCreate: true
+                    })
                 })
 
                 .catch(function (response) {
 
-                    console.log(response)
                 })
-
         };
 
         self.post = function () {
@@ -41,10 +43,9 @@
             $http({
 
                 method: 'POST',
-                url: url,
-                data: self.contract
+                url:    url,
+                data:   self.contract
             })
-
                 .then(function () {
 
                     self.refresh();

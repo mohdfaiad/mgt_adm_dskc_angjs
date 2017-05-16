@@ -1,6 +1,6 @@
 angular
     .module('managementAdminCloud')
-    .factory('messagesFcty', [
+    .factory('messagesFtry', [
 
         'toastr',
         messagesFactory

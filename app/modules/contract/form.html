@@ -3,32 +3,36 @@
 <section class="content">
     <div class="nav-tabs-custom" ng-controller="contractCtrl as ctrCtrl">
         <ul class="nav nav-tabs">
-            <li class="active">
+            <li class="active" ng-if="ctrCtrl.tabRead">
                 <a href data-target="#tabRead" data-toggle="tab">
                     <i class="fa fa-bars"></i> List
                 </a>
             </li>
-            <li>
+            <li ng-if="ctrCtrl.tabCreate">
                 <a href data-target="#tabCreate" data-toggle="tab">
                     <i class="fa fa-plus"></i> Insert
                 </a>
             </li>
-            <li>
+            <li ng-if="ctrCtrl.tabUpdate">
                 <a href data-target="#tabUpdate" data-toggle="tab">
                     <i class="fa fa-pencil"></i> Update
                 </a>
             </li>
-            <li>
+            <li ng-if="ctrCtrl.tabDelete">
                 <a href data-target="#tabDelete" data-toggle="tab">
                     <i class="fa fa-trash-o"></i> Delete
                 </a>
             </li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane" id="tabCreate" ng-include="'modules/contract/crud_c.html'"></div>
-            <div class="tab-pane active" id="tabRead" ng-include="'modules/contract/crud_r.html'"></div>
-            <div class="tab-pane" id="tabUpdate" ng-include="'modules/contract/crud_c.html'"></div>
-            <div class="tab-pane" id="tabDelete" ng-include="'modules/contract/crud_c.html'"></div>
+            <div class="tab-pane" id="tabCreate" ng-include="'modules/contract/crud_c.html'"
+                 ng-if="ctrCtrl.tabCreate"></div>
+            <div class="tab-pane active" id="tabRead" ng-include="'modules/contract/crud_r.html'"
+                 ng-if="ctrCtrl.tabRead"></div>
+            <div class="tab-pane" id="tabUpdate" ng-include="'modules/contract/crud_c.html'"
+                 ng-if="ctrCtrl.tabUpdate"></div>
+            <div class="tab-pane" id="tabDelete" ng-include="'modules/contract/crud_c.html'"
+                 ng-if="ctrCtrl.tabDelete"></div>
         </div>
     </div>
 </section>

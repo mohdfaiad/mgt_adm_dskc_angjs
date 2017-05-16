@@ -44,9 +44,9 @@
     </div>
 
     <div class="box-footer">
-        <button class="btn btn-primary" ng-click="ctrCtrl.post()">Insert</button>
-        <button class="btn btn-info">Edit</button>
-        <button class="btn btn-danger">Delete</button>
+        <button class="btn btn-primary" ng-click="ctrCtrl.post()" ng-if="ctrlCtrl.tabCreate">Insert</button>
+        <button class="btn btn-info" ng-if="ctrlCtrl.tabUpdate">Edit</button>
+        <button class="btn btn-danger" ng-if="ctrlCtrl.tabDelete">Delete</button>
         <button class="btn btn-default">Cancel</button>
     </div>
 </div>
