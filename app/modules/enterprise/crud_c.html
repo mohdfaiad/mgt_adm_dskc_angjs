@@ -1,16 +1,46 @@
 <div role="form">
     <div class="box-body">
-        <div class="col-xs-12 col-m-4">
-            <div class="form-group">
-                <label for="firstName">First Name</label>
-                <input id="firstName" class="form-control" placeholder="First Name">
-            </div>
-        </div>
+        <fields id="ent_full_name"
+                label="Full Name"
+                grid="12 6 4"
+                placeholder="Full Name"
+                model="entCtrl.enterprise.ent_full_name"
+                readonly="entCtrl.tabDelete"></fields>
+
+        <fields id="ent_email"
+                label="E-mail"
+                grid="12 6 4"
+                placeholder="E-mail"
+                model="entCtrl.enterprise.ent_email"
+                readonly="entCtrl.tabDelete"></fields>
+
+        <fields id="ent_phone1"
+                label="Phone 1"
+                grid="12 6 4"
+                placeholder="Phone 1"
+                model="entCtrl.enterprise.ent_phone1"
+                readonly="entCtrl.tabDelete"></fields>
+
+        <fields id="ent_data_open"
+                label="Data Open"
+                grid="12 6 4"
+                grid="12 6 4"
+                placeholder="Data Open"
+                model="entCtrl.enterprise.ent_data_open"
+                readonly="entCtrl.tabDelete"></fields>
+
+        <fields id="ent_status"
+                label="Status"
+                grid="12 6 4"
+                placeholder="Status"
+                model="entCtrl.enterprise.ent_status"
+                readonly="entCtrl.tabDelete"></fields>
     </div>
+
     <div class="box-footer">
-        <button class="btn btn-primary">Insert</button>
-        <button class="btn btn-info">Edit</button>
-        <button class="btn btn-danger">Delete</button>
-        <button class="btn btn-default">Cancel</button>
+        <button class="btn btn-primary" ng-click="entCtrl.post()" ng-if="entCtrl.tabCreate">Insert</button>
+        <button class="btn btn-info" ng-if="entCtrl.tabUpdate" ng-click="entCtrl.update()">Edit</button>
+        <button class="btn btn-danger" ng-if="entCtrl.tabDelete" ng-click="entCtrl.delete()">Delete</button>
+        <button class="btn btn-default" ng-click="entCtrl.refresh()">Cancel</button>
     </div>
 </div>

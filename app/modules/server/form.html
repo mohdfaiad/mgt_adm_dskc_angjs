@@ -1,34 +1,38 @@
 <content-header name="Servers" small="Management Servers"></content-header>
 
 <section class="content">
-    <div class="nav-tabs-custom" ng-controller="serverCtrl">
+    <div class="nav-tabs-custom" ng-controller="serverCtrl as srvCtrl">
         <ul class="nav nav-tabs">
-            <li class="active">
+            <li ng-if="srvCtrl.tabRead" ng-class="{active: srvCtrl.tabRead}">
                 <a href data-target="#tabRead" data-toggle="tab">
                     <i class="fa fa-bars"></i> List
                 </a>
             </li>
-            <li>
+            <li ng-if="srvCtrl.tabCreate">
                 <a href data-target="#tabCreate" data-toggle="tab">
                     <i class="fa fa-plus"></i> Insert
                 </a>
             </li>
-            <li>
+            <li ng-if="srvCtrl.tabUpdate" ng-class="{active: srvCtrl.tabUpdate}">
                 <a href data-target="#tabUpdate" data-toggle="tab">
                     <i class="fa fa-pencil"></i> Update
                 </a>
             </li>
-            <li>
+            <li ng-if="srvCtrl.tabDelete" ng-class="{active: srvCtrl.tabDelete}">
                 <a href data-target="#tabDelete" data-toggle="tab">
                     <i class="fa fa-trash-o"></i> Delete
                 </a>
             </li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane" id="tabCreate" ng-include="'modules/server/crud_c.html'"></div>
-            <div class="tab-pane active" id="tabRead" ng-include="'modules/server/crud_r.html'"></div>
-            <div class="tab-pane" id="tabUpdate" ng-include="'modules/server/crud_c.html'"></div>
-            <div class="tab-pane" id="tabDelete" ng-include="'modules/server/crud_c.html'"></div>
+            <div class="tab-pane" id="tabCreate" ng-include="'modules/server/crud_c.html'"
+                 ng-if="srvCtrl.tabCreate"></div>
+            <div class="tab-pane" id="tabRead" ng-include="'modules/server/crud_r.html'"
+                 ng-class="{active: srvCtrl.tabRead}" ng-if="srvCtrl.tabRead"></div>
+            <div class="tab-pane" id="tabUpdate" ng-include="'modules/server/crud_c.html'"
+                 ng-class="{active: srvCtrl.tabUpdate}" ng-if="srvCtrl.tabUpdate" ></div>
+            <div class="tab-pane" id="tabDelete" ng-include="'modules/server/crud_c.html'"
+                 ng-class="{active: srvCtrl.tabDelete}" ng-if="srvCtrl.tabDelete"></div>
         </div>
     </div>
 </section>

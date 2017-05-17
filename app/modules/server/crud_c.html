@@ -1,16 +1,53 @@
 <div role="form">
     <div class="box-body">
-        <div class="col-xs-12 col-m-4">
-            <div class="form-group">
-                <label for="firstName">First Name</label>
-                <input id="firstName" class="form-control" placeholder="First Name">
-            </div>
-        </div>
+
+        <fields id="srv_name"
+                label="Name"
+                grid="12 6 4"
+                placeholder="Name"
+                model="srvCtrl.server.srv_name"
+                readonly="srvCtrl.tabDelete"></fields>
+
+        <fields id="srv_address"
+                label="Address"
+                grid="12 6 4"
+                placeholder="Address"
+                model="srvCtrl.server.srv_address"
+                readonly="srvCtrl.tabDelete"></fields>
+
+        <fields id="srv_username"
+                label="Username"
+                grid="12 6 4"
+                placeholder="Username"
+                model="srvCtrl.server.srv_username"
+                readonly="srvCtrl.tabDelete"></fields>
+
+        <fields id="srv_password"
+                label="Password"
+                grid="12 6 4"
+                placeholder="Password"
+                model="srvCtrl.server.srv_password"
+                readonly="srvCtrl.tabDelete"></fields>
+
+        <fields id="srv_port"
+                label="Port"
+                grid="12 6 4"
+                placeholder="Port"
+                model="srvCtrl.server.srv_port"
+                readonly="srvCtrl.tabDelete"></fields>
+
+        <fields id="srv_status"
+                label="Status"
+                grid="12 6 4"
+                placeholder="Status"
+                model="srvCtrl.server.srv_status"
+                readonly="srvCtrl.tabDelete"></fields>
     </div>
+
     <div class="box-footer">
-        <button class="btn btn-primary">Insert</button>
-        <button class="btn btn-info">Edit</button>
-        <button class="btn btn-danger">Delete</button>
-        <button class="btn btn-default">Cancel</button>
+        <button class="btn btn-primary" ng-click="srvCtrl.post()" ng-if="srvCtrl.tabCreate">Insert</button>
+        <button class="btn btn-info" ng-if="srvCtrl.tabUpdate" ng-click="srvCtrl.update()">Edit</button>
+        <button class="btn btn-danger" ng-if="srvCtrl.tabDelete" ng-click="srvCtrl.delete()">Delete</button>
+        <button class="btn btn-default" ng-click="srvCtrl.refresh()">Cancel</button>
     </div>
 </div>

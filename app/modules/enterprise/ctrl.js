@@ -1,32 +1,117 @@
-angular
-    .module('managementAdminCloud')
-    .controller('enterpriseCtrl', [
+(function () {
+    angular
+        .module('managementAdminCloud')
+        .controller('enterpriseCtrl', [
 
-        '$http',
-        enterpriseController
-    ]);
+            '$http',
+            'messagesFtry',
+            'tabFtry',
+            enterpriseController
+        ]);
 
-function enterpriseController($http) {
+    function enterpriseController($http, messagesFcty, tabFtry) {
 
-    const vm = this;
+        const self  = this;
+        const url   = 'http://localhost:9080/api/enterprise';
 
-    vm.create = function () {
+        self.refresh = function () {
 
-        const url = 'http://54.233.82.242:9080/api/enterprise';
+            $http({
 
-        $http.post(url, vm.enterprise)
-
-            .then(function (response) {
-
-                vm.enterprise = {};
-                console.log(response);
-                console.log('Success');
+                method: 'GET',
+                url:    url
             })
+                .then(function (response) {
 
-            .catch(function (response) {
+                    self.enterprise   = {};
+                    self.enterprises  = response.data;
 
-                console.log(response);
-                console.log('Error');
+                    tabFtry.show(self, {
+
+                        tabRead: true,
+                        tabCreate: true
+                    })
+                })
+
+                .catch(function (response) {
+
+                })
+        };
+
+        self.post = function () {
+
+            $http({
+
+                method: 'POST',
+                url:    url,
+                data:   self.enterprise
             })
+                .then(function () {
+
+                    self.refresh();
+                    messagesFcty.addSuccess('Operacao realizada com sucesso');
+                })
+
+                .catch(function (response) {
+
+                    messagesFcty.addError(response.err)
+                })
+        };
+
+        self.update = function () {
+
+            $http({
+
+                method: 'PUT',
+                url: `${url}/${self.enterprise._id}`
+            })
+                .then(function () {
+
+                    self.refresh();
+                    messagesFcty.addSuccess('Operacao realizada com sucesso!')
+                })
+                .catch(function (response) {
+
+                    messagesFcty.addError(response.errors)
+                })
+        };
+
+        self.delete = function () {
+
+            $http({
+
+                method: 'DELETE',
+                url: `${url}/${self.enterprise._id}`
+            })
+                .then(function () {
+
+                    self.refresh();
+                    messagesFcty.addSuccess('Operacao realizada com sucesso!')
+                })
+                .catch(function (response) {
+
+                    messagesFcty.addError(response.err)
+                })
+        };
+
+        self.showTabUpdate = function (enterprise) {
+
+            self.enterprise = enterprise;
+            tabFtry.show(self, {
+
+                tabUpdate: true
+            })
+        };
+
+        self.showTabDelete = function (enterprise) {
+
+            self.enterprise = enterprise;
+            tabFtry.show(self, {
+
+                tabDelete: true
+            })
+        };
+
+        self.refresh();
     }
-}
+})();

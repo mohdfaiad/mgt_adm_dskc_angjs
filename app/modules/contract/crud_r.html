@@ -14,8 +14,10 @@
             <td>{{contract.ctr_email}}</td>
             <td>{{contract.ctr_data_registration}}</td>
             <td class="table-actions">
-                <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-                <button class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                <button class="btn btn-warning" ng-click="ctrCtrl.showTabUpdate(contract)"><i class="fa fa-pencil"></i>
+                </button>
+                <button class="btn btn-danger" ng-click="ctrCtrl.showTabDelete(contract)"><i class="fa fa-trash-o"></i>
+                </button>
             </td>
         </tr>
         </tbody>

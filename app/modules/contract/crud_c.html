@@ -1,52 +1,60 @@
 <div role="form">
     <div class="box-body">
+
         <fields id="ctr_first_name"
                 label="First Name"
                 grid="12 6 4"
                 placeholder="First Name"
-                model="ctrCtrl.contract.ctr_first_name"></fields>
+                model="ctrCtrl.contract.ctr_first_name"
+                readonly="ctrCtrl.tabDelete"></fields>
 
         <fields id="ctr_last_name"
                 label="Last Name"
                 grid="12 6 4"
                 placeholder="Last Name"
-                model="ctrCtrl.contract.ctr_last_name"></fields>
+                model="ctrCtrl.contract.ctr_last_name"
+                readonly="ctrCtrl.tabDelete"></fields>
 
         <fields id="ctr_full_name"
                 label="Full Name"
                 grid="12 6 4"
                 placeholder="Full Name"
-                model="ctrCtrl.contract.ctr_full_name"></fields>
+                model="ctrCtrl.contract.ctr_full_name"
+                readonly="ctrCtrl.tabDelete"></fields>
 
         <fields id="ctr_email"
                 label="E-mail"
                 grid="12 6 4"
                 placeholder="E-mail"
-                model="ctrCtrl.contract.ctr_email"></fields>
+                model="ctrCtrl.contract.ctr_email"
+                readonly="ctrCtrl.tabDelete"></fields>
 
         <fields id="ctr_phone1"
                 label="Phone 1"
                 grid="12 6 4"
                 placeholder="Phone 1"
-                model="ctrCtrl.contract.ctr_phone1"></fields>
+                model="ctrCtrl.contract.ctr_phone1"
+                readonly="ctrCtrl.tabDelete"></fields>
 
         <fields id="ctr_data_birth"
                 label="Data Birth"
                 grid="12 6 4"
                 placeholder="Data Birth"
-                model="ctrCtrl.contract.ctr_data_birth"></fields>
+                model="ctrCtrl.contract.ctr_data_birth"
+                readonly="ctrCtrl.tabDelete"></fields>
 
         <fields id="ctr_status"
                 label="Status"
                 grid="12 6 4"
                 placeholder="Status"
-                model="ctrCtrl.contract.ctr_status"></fields>
+                model="ctrCtrl.contract.ctr_status"
+                readonly="ctrCtrl.tabDelete"></fields>
     </div>
 
     <div class="box-footer">
-        <button class="btn btn-primary" ng-click="ctrCtrl.post()" ng-if="ctrlCtrl.tabCreate">Insert</button>
-        <button class="btn btn-info" ng-if="ctrlCtrl.tabUpdate">Edit</button>
-        <button class="btn btn-danger" ng-if="ctrlCtrl.tabDelete">Delete</button>
-        <button class="btn btn-default">Cancel</button>
+        <button class="btn btn-primary" ng-click="ctrCtrl.post()" ng-if="ctrCtrl.tabCreate">Insert</button>
+        <button class="btn btn-info" ng-if="ctrCtrl.tabUpdate" ng-click="ctrCtrl.update()">Edit</button>
+        <button class="btn btn-danger" ng-if="ctrCtrl.tabDelete" ng-click="ctrCtrl.delete()">Delete</button>
+        <button class="btn btn-default" ng-click="ctrCtrl.refresh()">Cancel</button>
     </div>
 </div>

@@ -1,16 +1,60 @@
 <div role="form">
     <div class="box-body">
-        <div class="col-xs-12 col-m-4">
-            <div class="form-group">
-                <label for="firstName">First Name</label>
-                <input id="firstName" class="form-control" placeholder="First Name">
-            </div>
-        </div>
+
+        <fields id="cli_first_name"
+                label="First Name"
+                grid="12 6 4"
+                placeholder="First Name"
+                model="cliCtrl.client.cli_first_name"
+                readonly="cliCtrl.tabDelete"></fields>
+
+        <fields id="cli_last_name"
+                label="Last Name"
+                grid="12 6 4"
+                placeholder="Last Name"
+                model="cliCtrl.client.cli_last_name"
+                readonly="cliCtrl.tabDelete"></fields>
+
+        <fields id="cli_full_name"
+                label="Full Name"
+                grid="12 6 4"
+                placeholder="Full Name"
+                model="cliCtrl.client.cli_full_name"
+                readonly="cliCtrl.tabDelete"></fields>
+
+        <fields id="cli_email"
+                label="E-mail"
+                grid="12 6 4"
+                placeholder="E-mail"
+                model="cliCtrl.client.cli_email"
+                readonly="cliCtrl.tabDelete"></fields>
+
+        <fields id="cli_phone1"
+                label="Phone 1"
+                grid="12 6 4"
+                placeholder="Phone 1"
+                model="cliCtrl.client.cli_phone1"
+                readonly="cliCtrl.tabDelete"></fields>
+
+        <fields id="cli_data_birth"
+                label="Data Birth"
+                grid="12 6 4"
+                placeholder="Data Birth"
+                model="cliCtrl.client.cli_data_birth"
+                readonly="cliCtrl.tabDelete"></fields>
+
+        <fields id="cli_status"
+                label="Status"
+                grid="12 6 4"
+                placeholder="Status"
+                model="cliCtrl.client.cli_status"
+                readonly="cliCtrl.tabDelete"></fields>
     </div>
+
     <div class="box-footer">
-        <button class="btn btn-primary">Insert</button>
-        <button class="btn btn-info">Edit</button>
-        <button class="btn btn-danger">Delete</button>
-        <button class="btn btn-default">Cancel</button>
+        <button class="btn btn-primary" ng-click="cliCtrl.post()" ng-if="cliCtrl.tabCreate">Insert</button>
+        <button class="btn btn-info" ng-if="cliCtrl.tabUpdate" ng-click="cliCtrl.update()">Edit</button>
+        <button class="btn btn-danger" ng-if="cliCtrl.tabDelete" ng-click="cliCtrl.delete()">Delete</button>
+        <button class="btn btn-default" ng-click="cliCtrl.refresh()">Cancel</button>
     </div>
 </div>

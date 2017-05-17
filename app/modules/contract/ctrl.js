@@ -58,6 +58,60 @@
                 })
         };
 
+        self.update = function () {
+
+            $http({
+
+                method: 'PUT',
+                url: `${url}/${self.contract._id}`
+            })
+                .then(function () {
+
+                    self.refresh();
+                    messagesFcty.addSuccess('Operacao realizada com sucesso!')
+                })
+                .catch(function (response) {
+
+                    messagesFcty.addError(response.errors)
+                })
+        };
+
+        self.delete = function () {
+
+            $http({
+
+                method: 'DELETE',
+                url: `${url}/${self.contract._id}`
+            })
+                .then(function () {
+
+                    self.refresh();
+                    messagesFcty.addSuccess('Operacao realizada com sucesso!')
+                })
+                .catch(function (response) {
+
+                    messagesFcty.addError(response.err)
+                })
+        };
+
+        self.showTabUpdate = function (contract) {
+
+            self.contract = contract;
+            tabFtry.show(self, {
+
+                tabUpdate: true
+            })
+        };
+
+        self.showTabDelete = function (contract) {
+
+            self.contract = contract;
+            tabFtry.show(self, {
+
+                tabDelete: true
+            })
+        };
+
         self.refresh();
     }
 })();

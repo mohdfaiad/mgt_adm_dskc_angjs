@@ -3,7 +3,7 @@
 <section class="content">
     <div class="nav-tabs-custom" ng-controller="contractCtrl as ctrCtrl">
         <ul class="nav nav-tabs">
-            <li class="active" ng-if="ctrCtrl.tabRead">
+            <li ng-if="ctrCtrl.tabRead" ng-class="{active: ctrCtrl.tabRead}">
                 <a href data-target="#tabRead" data-toggle="tab">
                     <i class="fa fa-bars"></i> List
                 </a>
@@ -13,12 +13,12 @@
                     <i class="fa fa-plus"></i> Insert
                 </a>
             </li>
-            <li ng-if="ctrCtrl.tabUpdate">
+            <li ng-if="ctrCtrl.tabUpdate" ng-class="{active: ctrCtrl.tabUpdate}">
                 <a href data-target="#tabUpdate" data-toggle="tab">
                     <i class="fa fa-pencil"></i> Update
                 </a>
             </li>
-            <li ng-if="ctrCtrl.tabDelete">
+            <li ng-if="ctrCtrl.tabDelete" ng-class="{active: ctrCtrl.tabDelete}">
                 <a href data-target="#tabDelete" data-toggle="tab">
                     <i class="fa fa-trash-o"></i> Delete
                 </a>
@@ -27,12 +27,12 @@
         <div class="tab-content">
             <div class="tab-pane" id="tabCreate" ng-include="'modules/contract/crud_c.html'"
                  ng-if="ctrCtrl.tabCreate"></div>
-            <div class="tab-pane active" id="tabRead" ng-include="'modules/contract/crud_r.html'"
-                 ng-if="ctrCtrl.tabRead"></div>
+            <div class="tab-pane" id="tabRead" ng-include="'modules/contract/crud_r.html'"
+                 ng-class="{active: ctrCtrl.tabRead}" ng-if="ctrCtrl.tabRead"></div>
             <div class="tab-pane" id="tabUpdate" ng-include="'modules/contract/crud_c.html'"
-                 ng-if="ctrCtrl.tabUpdate"></div>
+                 ng-class="{active: ctrCtrl.tabUpdate}" ng-if="ctrCtrl.tabUpdate" ></div>
             <div class="tab-pane" id="tabDelete" ng-include="'modules/contract/crud_c.html'"
-                 ng-if="ctrCtrl.tabDelete"></div>
+                 ng-class="{active: ctrCtrl.tabDelete}" ng-if="ctrCtrl.tabDelete"></div>
         </div>
     </div>
 </section>

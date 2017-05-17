@@ -1,11 +1,27 @@
-<div role="form">
-    <div class="box-body">
-        <fieldset id="name" label="Nome" grid="12 6 4" placeholder="First Name"></fieldset>
-    </div>
-    <div class="box-footer">
-        <button class="btn btn-primary">Insert</button>
-        <button class="btn btn-info">Edit</button>
-        <button class="btn btn-danger">Delete</button>
-        <button class="btn btn-default">Cancel</button>
-    </div>
+<div class="box-body">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Port</th>
+            <th>Date Registration</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="server in srvCtrl.servers">
+            <td>{{server.srv_name}}</td>
+            <td>{{server.srv_address}}</td>
+            <td>{{server.srv_port}}</td>
+            <td>{{server.srv_data_registration}}</td>
+            <td class="table-actions">
+                <button class="btn btn-warning" ng-click="srvCtrl.showTabUpdate(server)"><i class="fa fa-pencil"></i>
+                </button>
+                <button class="btn btn-danger" ng-click="srvCtrl.showTabDelete(server)"><i class="fa fa-trash-o"></i>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </div>
