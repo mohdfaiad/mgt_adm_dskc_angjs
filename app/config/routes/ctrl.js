@@ -1,11 +1,16 @@
-angular.module('managementAdminCloud').config([
+angular
+    .module('managementAdminCloud')
+    .config([
+
     '$stateProvider',
     '$urlRouterProvider',
+
     function ($stateProvider, $urlRouterProvider) {
+
         $stateProvider
             .state('dashboard', {
                 url: '/dashboard',
-                templateUrl: 'dashboard/dashboard.html'
+                templateUrl: 'dashboard/dskc/form.html'
             })
             .state('enterprise', {
                 url: '/enterprise',
@@ -17,7 +22,7 @@ angular.module('managementAdminCloud').config([
             })
             .state('client', {
                 url: '/client',
-                templateUrl: 'modules/client/form.html'
+                templateUrl: 'modules/client/client/form.html'
             })
             .state('server', {
                 url: '/server',

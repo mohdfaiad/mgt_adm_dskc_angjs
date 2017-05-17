@@ -1,4 +1,6 @@
-angular.module('managementAdminCloud', [
+angular
+    .module('managementAdminCloud', [
+
     'ui.router',
     'ngAnimate',
     'toastr'

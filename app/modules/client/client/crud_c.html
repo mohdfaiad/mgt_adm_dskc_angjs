@@ -49,6 +49,13 @@
                 placeholder="Status"
                 model="cliCtrl.client.cli_status"
                 readonly="cliCtrl.tabDelete"></fields>
+
+        <div class="col-xs-12 col-sm-6">
+            <fieldset>
+                <legend>Users</legend>
+                <div ng-include="'modules/client/client_usr/crud_c.html'"></div>
+            </fieldset>
+        </div>
     </div>
 
     <div class="box-footer">

@@ -1,0 +1,39 @@
+<div class="col-xs-12">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in cliCtrl.client.cli_usr">
+            <td>
+                <input ng-model="user.cli_usr_name" placeholder="Name" ng-readonly="cliCtrl.tabDelete">
+            </td>
+            <td>
+                <input ng-model="user.cli_usr_username" placeholder="Username" ng-readonly="cliCtrl.tabDelete">
+            </td>
+            <td>
+                <input ng-model="user.cli_usr_password" placeholder="Password" ng-readonly="cliCtrl.tabDelete">
+            </td>
+            <td>
+                <input ng-model="user.cli_usr_status" placeholder="Status" ng-readonly="cliCtrl.tabDelete">
+            </td>
+            <td class="table-actions">
+                <button class="btn btn-success" ng-class="{disabled: cliCtrl.tabDelete}"
+                        ng-click="cliCtrl.addUser($index)"><i
+                        class="fa fa-plus"></i>
+                </button>
+                <button class="btn btn-danger" ng-class="{disabled: cliCtrl.tabDelete}"
+                        ng-click="cliCtrl.delUser($index)"><i
+                        class="fa fa-trash"></i>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
