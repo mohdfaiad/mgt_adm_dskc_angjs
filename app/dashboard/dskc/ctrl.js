@@ -1,6 +1,7 @@
 (function () {
-    angular.module('managementAdminCloud').controller('dashboardCtrl', [
-
+    angular
+        .module('managementAdminCloud')
+        .controller('dashboardCtrl', [
         '$http',
         dashboardController
     ]);

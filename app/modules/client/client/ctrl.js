@@ -9,17 +9,17 @@
         ]);
 
     function clientController($http, messagesFcty, tabFtry) {
-        const self  = this;
-        const url   = 'http://localhost:9080/api/client';
+        const self = this;
+        const url = 'http://localhost:9080/api/client';
 
         self.refresh = function () {
             $http({
                 method: 'GET',
-                url:    url
+                url: url
             })
                 .then(function (response) {
-                    self.client   = {cli_usr: [{}]};
-                    self.clients  = response.data;
+                    self.client = {cli_usr: [{}]};
+                    self.clients = response.data;
                     tabFtry.show(self, {
                         tabRead: true,
                         tabCreate: true
@@ -33,8 +33,8 @@
         self.post = function () {
             $http({
                 method: 'POST',
-                url:    url,
-                data:   self.client
+                url: url,
+                data: self.client
             })
                 .then(function () {
                     self.refresh();
@@ -48,7 +48,8 @@
         self.update = function () {
             $http({
                 method: 'PUT',
-                url: `${url}/${self.client._id}`
+                url: `${url}/${self.client._id}`,
+                data: self.client
             })
                 .then(function () {
                     self.refresh();
@@ -92,9 +93,11 @@
         };
 
         self.delUser = function (index) {
-           if (self.client.cli_usr.length > 1) {
-               self.client.cli_usr.splice(index, 1)
-           }
+            if (self.client.cli_usr.length > 1) {
+                self.client.cli_usr.splice(index, 1)
+            }
         };
+
+        self.refresh();
     }
 })();
