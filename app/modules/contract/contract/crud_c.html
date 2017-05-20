@@ -9,28 +9,12 @@
         </div>
         <div class="box-body">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <field-input id="cli_contract_id"
-                                     placeholder="Contract ID"
-                                     model="cliCtrl.client.cli_contract_id"
-                                     readonly="cliCtrl.tabDelete"></field-input>
-                    </div>
-                </div>
                 <div class="col-md-3">
                     <div class="form-group">
-                        <field-input id="cli_register"
-                                     placeholder="Register: E or P"
-                                     model="cliCtrl.client.cli_register"
-                                     readonly="cliCtrl.tabDelete"></field-input>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <field-input id="cli_status"
+                        <field-input id="ctr_status"
                                      placeholder="Status: E or D"
-                                     model="cliCtrl.client.cli_status"
-                                     readonly="cliCtrl.tabDelete"></field-input>
+                                     model="ctrCtrl.contract.ctr_status"
+                                     readonly="ctrCtrl.tabDelete"></field-input>
                     </div>
                 </div>
             </div>
@@ -48,51 +32,51 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="form-group">
-                        <field-input id="cli_first_name"
+                        <field-input id="ctr_first_name"
                                      placeholder="First Name"
-                                     model="cliCtrl.client.cli_first_name"
-                                     readonly="cliCtrl.tabDelete"></field-input>
+                                     model="ctrCtrl.contract.ctr_first_name"
+                                     readonly="ctrCtrl.tabDelete"></field-input>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
-                        <field-input id="cli_last_name"
+                        <field-input id="ctr_last_name"
                                      placeholder="Last Name"
-                                     model="cliCtrl.client.cli_last_name"
-                                     readonly="cliCtrl.tabDelete"></field-input>
+                                     model="ctrCtrl.contract.ctr_last_name"
+                                     readonly="ctrCtrl.tabDelete"></field-input>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <field-input id="cli_full_name"
+                        <field-input id="ctr_full_name"
                                      placeholder="Full Name"
-                                     model="cliCtrl.client.cli_full_name"
-                                     readonly="cliCtrl.tabDelete"></field-input>
+                                     model="ctrCtrl.contract.ctr_full_name"
+                                     readonly="ctrCtrl.tabDelete"></field-input>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <field-input id="cli_email"
+                        <field-input id="ctr_email"
                                      type="email"
                                      placeholder="E-mail"
-                                     model="cliCtrl.client.cli_email"
-                                     readonly="cliCtrl.tabDelete"></field-input>
+                                     model="ctrCtrl.contract.ctr_email"
+                                     readonly="ctrCtrl.tabDelete"></field-input>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
-                        <field-input id="cli_phone1"
+                        <field-input id="ctr_phone1"
                                      placeholder="Phone 1"
-                                     model="cliCtrl.client.cli_phone1"
-                                     readonly="cliCtrl.tabDelete"></field-input>
+                                     model="ctrCtrl.contract.ctr_phone1"
+                                     readonly="ctrCtrl.tabDelete"></field-input>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
-                        <field-input id="cli_data_birth"
+                        <field-input id="ctr_data_birth"
                                      placeholder="Date Birth: YYY-MM-DD"
-                                     model="cliCtrl.client.cli_data_birth"
-                                     readonly="cliCtrl.tabDelete"></field-input>
+                                     model="ctrCtrl.contract.ctr_data_birth"
+                                     readonly="ctrCtrl.tabDelete"></field-input>
                     </div>
                 </div>
             </div>
@@ -108,14 +92,14 @@
         </div>
         <div class="box-body">
             <div class="row">
-                <div ng-include="'modules/client/client_usr/crud_c.html'"></div>
+                <div ng-include="'modules/contract/contract_usr/crud_c.html'"></div>
             </div>
         </div>
     </div>
     <div class="box-footer">
-        <button class="btn btn-primary" ng-click="cliCtrl.post()" ng-if="cliCtrl.tabCreate">Insert</button>
-        <button class="btn btn-info" ng-if="cliCtrl.tabUpdate" ng-click="cliCtrl.update()">Edit</button>
-        <button class="btn btn-danger" ng-if="cliCtrl.tabDelete" ng-click="cliCtrl.delete()">Delete</button>
-        <button class="btn btn-default" ng-click="cliCtrl.refresh()">Cancel</button>
+        <button class="btn btn-primary" ng-click="ctrCtrl.post()" ng-if="ctrCtrl.tabCreate">Insert</button>
+        <button class="btn btn-info" ng-if="ctrCtrl.tabUpdate" ng-click="ctrCtrl.update()">Edit</button>
+        <button class="btn btn-danger" ng-if="ctrCtrl.tabDelete" ng-click="ctrCtrl.delete()">Delete</button>
+        <button class="btn btn-default" ng-click="ctrCtrl.refresh()">Cancel</button>
     </div>
 </div>

@@ -1,16 +1,16 @@
 (function () {
     angular
         .module('managementAdminCloud')
-        .controller('contractCtrl', [
+        .controller('dskcloudCtrl', [
             '$http',
             'messagesFtry',
             'tabFtry',
-            contractController
+            dskcloudController
         ]);
 
-    function contractController($http, messagesFcty, tabFtry) {
+    function dskcloudController($http, messagesFcty, tabFtry) {
         const self = this;
-        const url = 'http://localhost:9080/api/contract';
+        const url = 'http://localhost:9080/api/dskcloud';
 
         self.refresh = function () {
             $http({
@@ -18,12 +18,12 @@
                 url: url
             })
                 .then(function (response) {
-                    self.contract = {};
-                    self.contracts = response.data;
+                    self.dskcloud = {};
+                    self.dskclouds = response.data;
                     tabFtry.show(self, {
                         tabRead: true,
                         tabCreate: true
-                    })
+                    });
                 })
                 .catch(function (response) {
 
@@ -34,7 +34,7 @@
             $http({
                 method: 'POST',
                 url: url,
-                data: self.contract
+                data: self.dskcloud
             })
                 .then(function () {
                     self.refresh();
@@ -48,8 +48,8 @@
         self.update = function () {
             $http({
                 method: 'PUT',
-                url: `${url}/${self.contract._id}`,
-                data: self.contract
+                url: `${url}/${self.dskcloud._id}`,
+                data: self.dskcloud
             })
                 .then(function () {
                     self.refresh();
@@ -63,7 +63,7 @@
         self.delete = function () {
             $http({
                 method: 'DELETE',
-                url: `${url}/${self.contract._id}`
+                url: `${url}/${self.dskcloud._id}`
             })
                 .then(function () {
                     self.refresh();
@@ -74,15 +74,15 @@
                 })
         };
 
-        self.showTabUpdate = function (contract) {
-            self.contract = contract;
+        self.showTabUpdate = function (dskcloud) {
+            self.dskcloud = dskcloud;
             tabFtry.show(self, {
                 tabUpdate: true
             })
         };
 
-        self.showTabDelete = function (contract) {
-            self.contract = contract;
+        self.showTabDelete = function (dskcloud) {
+            self.dskcloud = dskcloud;
             tabFtry.show(self, {
                 tabDelete: true
             })

@@ -2,6 +2,7 @@
     <table class="table">
         <thead>
         <tr>
+            <th>Contract ID</th>
             <th>Full Name</th>
             <th>E-Mail</th>
             <th>Date Registration</th>
@@ -10,6 +11,7 @@
         </thead>
         <tbody>
         <tr ng-repeat="contract in ctrCtrl.contracts">
+            <td>{{contract._id}}</td>
             <td>{{contract.ctr_full_name}}</td>
             <td>{{contract.ctr_email}}</td>
             <td>{{contract.ctr_data_registration}}</td>

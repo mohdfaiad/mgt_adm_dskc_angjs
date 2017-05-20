@@ -12,11 +12,11 @@ angular
                 })
                 .state('enterprise', {
                     url: '/enterprise',
-                    templateUrl: 'modules/enterprise/form.html'
+                    templateUrl: 'modules/enterprise/enterprise/form.html'
                 })
                 .state('contract', {
                     url: '/contract',
-                    templateUrl: 'modules/contract/form.html'
+                    templateUrl: 'modules/contract/contract/form.html'
                 })
                 .state('client', {
                     url: '/client',
@@ -24,11 +24,15 @@ angular
                 })
                 .state('server', {
                     url: '/server',
-                    templateUrl: 'modules/server/form.html'
+                    templateUrl: 'modules/server/server/form.html'
+                })
+                .state('dskcloud', {
+                    url: '/dskcloud',
+                    templateUrl: 'modules/dskcloud/dskcloud/form.html'
                 })
                 .state('exam', {
                     url: '/exam',
-                    templateUrl: 'modules/exam/form.html'
+                    templateUrl: 'modules/exam/exam/form.html'
                 });
 
             $urlRouterProvider.otherwise('dashboard')

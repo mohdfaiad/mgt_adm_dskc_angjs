@@ -1,16 +1,16 @@
 (function () {
     angular
         .module('managementAdminCloud')
-        .controller('clientCtrl', [
+        .controller('contractCtrl', [
             '$http',
             'messagesFtry',
             'tabFtry',
-            clientController
+            contractController
         ]);
 
-    function clientController($http, messagesFcty, tabFtry) {
+    function contractController($http, messagesFcty, tabFtry) {
         const self = this;
-        const url = 'http://localhost:9080/api/client';
+        const url = 'http://localhost:9080/api/contract';
 
         self.refresh = function () {
             $http({
@@ -18,12 +18,12 @@
                 url: url
             })
                 .then(function (response) {
-                    self.client = {cli_usr: [{}]};
-                    self.clients = response.data;
+                    self.contract = {ctr_usr: [{}]};
+                    self.contracts = response.data;
                     tabFtry.show(self, {
                         tabRead: true,
                         tabCreate: true
-                    });
+                    })
                 })
                 .catch(function (response) {
 
@@ -34,7 +34,7 @@
             $http({
                 method: 'POST',
                 url: url,
-                data: self.client
+                data: self.contract
             })
                 .then(function () {
                     self.refresh();
@@ -48,8 +48,8 @@
         self.update = function () {
             $http({
                 method: 'PUT',
-                url: `${url}/${self.client._id}`,
-                data: self.client
+                url: `${url}/${self.contract._id}`,
+                data: self.contract
             })
                 .then(function () {
                     self.refresh();
@@ -63,7 +63,7 @@
         self.delete = function () {
             $http({
                 method: 'DELETE',
-                url: `${url}/${self.client._id}`
+                url: `${url}/${self.contract._id}`
             })
                 .then(function () {
                     self.refresh();
@@ -74,27 +74,27 @@
                 })
         };
 
-        self.showTabUpdate = function (client) {
-            self.client = client;
+        self.showTabUpdate = function (contract) {
+            self.contract = contract;
             tabFtry.show(self, {
                 tabUpdate: true
             })
         };
 
-        self.showTabDelete = function (client) {
-            self.client = client;
+        self.showTabDelete = function (contract) {
+            self.contract = contract;
             tabFtry.show(self, {
                 tabDelete: true
             })
         };
 
         self.addUser = function (index) {
-            self.client.cli_usr.splice(index + 1, 0, {})
+            self.contract.ctr_usr.splice(index + 1, 0, {})
         };
 
         self.delUser = function (index) {
-            if (self.client.cli_usr.length > 1) {
-                self.client.cli_usr.splice(index, 1)
+            if (self.contract.ctr_usr.length > 1) {
+                self.contract.ctr_usr.splice(index, 1)
             }
         };
 

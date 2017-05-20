@@ -9,16 +9,17 @@
         ]);
 
     function serverController($http, messagesFcty, tabFtry) {
-        const self  = this;
-        const url   = 'http://localhost:9080/api/server';
+        const self = this;
+        const url = 'http://localhost:9080/api/server';
+
         self.refresh = function () {
             $http({
                 method: 'GET',
-                url:    url
+                url: url
             })
                 .then(function (response) {
-                    self.server   = {};
-                    self.servers  = response.data;
+                    self.server = {};
+                    self.servers = response.data;
                     tabFtry.show(self, {
                         tabRead: true,
                         tabCreate: true
@@ -32,8 +33,8 @@
         self.post = function () {
             $http({
                 method: 'POST',
-                url:    url,
-                data:   self.server
+                url: url,
+                data: self.server
             })
                 .then(function () {
                     self.refresh();
@@ -47,7 +48,8 @@
         self.update = function () {
             $http({
                 method: 'PUT',
-                url: `${url}/${self.server._id}`
+                url: `${url}/${self.server._id}`,
+                data: self.server
             })
                 .then(function () {
                     self.refresh();

@@ -1,34 +1,48 @@
-<div class="col-xs-12">
+<div class="box-body">
     <table class="table">
         <thead>
         <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Username</th>
             <th>Password</th>
+            <th>Date Birth</th>
             <th>Status</th>
             <th>Actions</th>
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="user in cliCtrl.client.cli_usr">
+        <tr ng-repeat="cli_usr in cliCtrl.client.cli_usr">
             <td>
-                <input ng-model="user.cli_usr_name" placeholder="Name" ng-readonly="cliCtrl.tabDelete">
+                <input class="form-control input-sm" ng-model="cli_usr._id" placeholder="ID"
+                       ng-readonly="cliCtrl.tabDelete">
             </td>
             <td>
-                <input ng-model="user.cli_usr_username" placeholder="Username" ng-readonly="cliCtrl.tabDelete">
+                <input class="form-control input-sm" ng-model="cli_usr.cli_usr_name" placeholder="Name"
+                       ng-readonly="cliCtrl.tabDelete">
             </td>
             <td>
-                <input ng-model="user.cli_usr_password" placeholder="Password" ng-readonly="cliCtrl.tabDelete">
+                <input class="form-control input-sm" type="email" ng-model="cli_usr.cli_usr_username"
+                       placeholder="E-mail" ng-readonly="cliCtrl.tabDelete">
             </td>
             <td>
-                <input ng-model="user.cli_usr_status" placeholder="Status" ng-readonly="cliCtrl.tabDelete">
+                <input class="form-control input-sm" type="password" ng-model="cli_usr.cli_usr_password"
+                       placeholder="Password" ng-readonly="cliCtrl.tabDelete">
+            </td>
+            <td>
+                <input class="form-control input-sm" ng-model="cli_usr.cli_usr_date_birth"
+                       placeholder="Date Birth: YYY-MM-DD" ng-readonly="cliCtrl.tabDelete">
+            </td>
+            <td>
+                <input class="form-control input-sm" type="text" ng-model="cli_usr.cli_usr_status"
+                       placeholder="E or D" ng-readonly="cliCtrl.tabDelete">
             </td>
             <td class="table-actions">
-                <button class="btn btn-success" ng-class="{disabled: cliCtrl.tabDelete}"
+                <button class="btn btn-success btn-sm" ng-class="{disabled: cliCtrl.tabDelete}"
                         ng-click="cliCtrl.addUser($index)"><i
                         class="fa fa-plus"></i>
                 </button>
-                <button class="btn btn-danger" ng-class="{disabled: cliCtrl.tabDelete}"
+                <button class="btn btn-danger btn-sm" ng-class="{disabled: cliCtrl.tabDelete}"
                         ng-click="cliCtrl.delUser($index)"><i
                         class="fa fa-trash"></i>
                 </button>

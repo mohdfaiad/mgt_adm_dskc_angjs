@@ -1,0 +1,25 @@
+<div class="box-body">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Username</th>
+            <th>Address</th>
+            <th>Date Registration</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="dskcloud in dskcCtrl.dskclouds">
+            <td>{{dskcloud.dsk_username}}</td>
+            <td>{{dskcloud.dsk_address}}</td>
+            <td>{{dskcloud.dsk_data_registration}}</td>
+            <td class="table-actions">
+                <button class="btn btn-warning" ng-click="dskcCtrl.showTabUpdate(dskcloud)"><i class="fa fa-pencil"></i>
+                </button>
+                <button class="btn btn-danger" ng-click="dskcCtrl.showTabDelete(dskcloud)"><i class="fa fa-trash-o"></i>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

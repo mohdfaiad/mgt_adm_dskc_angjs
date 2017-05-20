@@ -25,13 +25,13 @@
             </li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane" id="tabCreate" ng-include="'modules/enterprise/crud_c.html'"
+            <div class="tab-pane" id="tabCreate" ng-include="'modules/enterprise/enterprise/crud_c.html'"
                  ng-if="entCtrl.tabCreate"></div>
-            <div class="tab-pane" id="tabRead" ng-include="'modules/enterprise/crud_r.html'"
+            <div class="tab-pane" id="tabRead" ng-include="'modules/enterprise/enterprise/crud_r.html'"
                  ng-class="{active: entCtrl.tabRead}" ng-if="entCtrl.tabRead"></div>
-            <div class="tab-pane" id="tabUpdate" ng-include="'modules/enterprise/crud_c.html'"
+            <div class="tab-pane" id="tabUpdate" ng-include="'modules/enterprise/enterprise/crud_c.html'"
                  ng-class="{active: entCtrl.tabUpdate}" ng-if="entCtrl.tabUpdate" ></div>
-            <div class="tab-pane" id="tabDelete" ng-include="'modules/enterprise/crud_c.html'"
+            <div class="tab-pane" id="tabDelete" ng-include="'modules/enterprise/enterprise/crud_c.html'"
                  ng-class="{active: entCtrl.tabDelete}" ng-if="entCtrl.tabDelete"></div>
         </div>
     </div>

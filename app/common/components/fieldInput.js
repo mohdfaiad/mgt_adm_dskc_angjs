@@ -1,5 +1,5 @@
 (function () {
-    angular.module('managementAdminCloud').component('fields', {
+    angular.module('managementAdminCloud').component('fieldInput', {
 
         bindings: {
 
@@ -23,11 +23,9 @@
 
         template: `
             <div class="{{ $ctrl.gridClasses }}">
-                <div class="form-group">
-                    <label for="{{ $ctrl.id }}">{{ $ctrl.label }}</label>
-                    <input id="{{ $ctrl.id }}" class="form-control" placeholder="{{ $ctrl.placeholder }}" 
-                        type="{{ $ctrl.type }}" ng-model="$ctrl.model" ng-readonly="$ctrl.readonly"/>
-                </div>
+                <label for="{{ $ctrl.id }}">{{ $ctrl.label }}</label>
+                <input id="{{ $ctrl.id }}" class="form-control input-sm" placeholder="{{ $ctrl.placeholder }}" 
+                    type="{{ $ctrl.type }}" ng-model="$ctrl.model" ng-readonly="$ctrl.readonly"/>
             </div>   
         `
     })

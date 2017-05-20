@@ -1,0 +1,37 @@
+<content-header name="Desktops Clouds" small="Management Desktops Clouds"></content-header>
+<section class="content">
+    <div class="nav-tabs-custom" ng-controller="dskcloudCtrl as dskcCtrl">
+        <ul class="nav nav-tabs">
+            <li ng-if="dskcCtrl.tabRead" ng-class="{active: dskcCtrl.tabRead}">
+                <a href data-target="#tabRead" data-toggle="tab">
+                    <i class="fa fa-bars"></i> List
+                </a>
+            </li>
+            <li ng-if="dskcCtrl.tabCreate">
+                <a href data-target="#tabCreate" data-toggle="tab">
+                    <i class="fa fa-plus"></i> Insert
+                </a>
+            </li>
+            <li ng-if="dskcCtrl.tabUpdate" ng-class="{active: dskcCtrl.tabUpdate}">
+                <a href data-target="#tabUpdate" data-toggle="tab">
+                    <i class="fa fa-pencil"></i> Update
+                </a>
+            </li>
+            <li ng-if="dskcCtrl.tabDelete" ng-class="{active: dskcCtrl.tabDelete}">
+                <a href data-target="#tabDelete" data-toggle="tab">
+                    <i class="fa fa-trash-o"></i> Delete
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane" id="tabCreate" ng-include="'modules/dskcloud/dskcloud/crud_c.html'"
+                 ng-if="dskcCtrl.tabCreate"></div>
+            <div class="tab-pane" id="tabRead" ng-include="'modules/dskcloud/dskcloud/crud_r.html'"
+                 ng-class="{active: dskcCtrl.tabRead}" ng-if="dskcCtrl.tabRead"></div>
+            <div class="tab-pane" id="tabUpdate" ng-include="'modules/dskcloud/dskcloud/crud_c.html'"
+                 ng-class="{active: dskcCtrl.tabUpdate}" ng-if="dskcCtrl.tabUpdate"></div>
+            <div class="tab-pane" id="tabDelete" ng-include="'modules/dskcloud/dskcloud/crud_c.html'"
+                 ng-class="{active: dskcCtrl.tabDelete}" ng-if="dskcCtrl.tabDelete"></div>
+        </div>
+    </div>
+</section>

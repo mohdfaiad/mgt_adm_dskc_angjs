@@ -1,0 +1,92 @@
+<div role="form">
+    <div class="box box-default">
+        <div class="box-header with-border">
+            <h3 class="box-title">dskcloud - Informations</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="box-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <field-input id="dsk_contract_id"
+                                     placeholder="Contact ID"
+                                     model="dskcCtrl.dskcloud.dsk_contract_id"
+                                     readonly="dskcCtrl.tabDelete"></field-input>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <field-input id="dsk_cli_usr_id"
+                                     placeholder="User ID"
+                                     model="dskcCtrl.dskcloud.dsk_cli_usr_id"
+                                     readonly="dskcCtrl.tabDelete"></field-input>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <field-input id="dsk_status"
+                                     placeholder="Status: E or D"
+                                     model="dskcCtrl.dskcloud.dsk_status"
+                                     readonly="dskcCtrl.tabDelete"></field-input>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box box-default">
+        <div class="box-header with-border">
+            <h3 class="box-title">Data - Informations</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="box-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <field-input id="dsk_username"
+                                     placeholder="Username"
+                                     model="dskcCtrl.dskcloud.dsk_username"
+                                     readonly="dskcCtrl.tabDelete"></field-input>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <field-input id="dsk_password"
+                                     type="password"
+                                     placeholder="Password"
+                                     model="dskcCtrl.dskcloud.dsk_password"
+                                     readonly="dskcCtrl.tabDelete"></field-input>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <field-input id="dsk_address"
+                                     placeholder="Address"
+                                     model="dskcCtrl.dskcloud.dsk_address"
+                                     readonly="dskcCtrl.tabDelete"></field-input>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <field-input id="dsk_port"
+                                     type="number"
+                                     placeholder="Port"
+                                     model="dskcCtrl.dskcloud.dsk_port"
+                                     readonly="dskcCtrl.tabDelete"></field-input>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-footer">
+        <button class="btn btn-primary" ng-click="dskcCtrl.post()" ng-if="dskcCtrl.tabCreate">Insert</button>
+        <button class="btn btn-info" ng-if="dskcCtrl.tabUpdate" ng-click="dskcCtrl.update()">Edit</button>
+        <button class="btn btn-danger" ng-if="dskcCtrl.tabDelete" ng-click="dskcCtrl.delete()">Delete</button>
+        <button class="btn btn-default" ng-click="dskcCtrl.refresh()">Cancel</button>
+    </div>
+</div>
