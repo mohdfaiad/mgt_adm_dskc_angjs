@@ -1,13 +1,13 @@
-// (function () {
-//     angular
-//         .directive("ngFileSelect",function(){
-//             return {
-//                 link: function($scope,el){
-//                     el.bind("change", function(e){
-//                         $scope.file = (e.srcElement || e.target).files[0];
-//                         $scope.getFile();
-//                     });
-//                 }
-//             }
-//         })
-// })();
+(function () {
+    angular
+        .module('managementAdminCloud')
+        .factory('apiFtry', [function () {
+            let address = '';
+            return {
+                srvAPI: function () {
+                    address = 'http://localhost:3080/';
+                    return address;
+                }
+            }
+        }]);
+})();

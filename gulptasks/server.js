@@ -7,7 +7,7 @@ gulp.task('server', ['watch'], function () {
         .pipe(webserver({
             livereload: true,
             host: '',
-            port: 8090
+            port: 3090
         }))
 });
 

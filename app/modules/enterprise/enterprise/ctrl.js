@@ -5,12 +5,14 @@
             '$http',
             'messagesFtry',
             'tabFtry',
+            'apiFtry'.
             enterpriseController
         ]);
 
-    function enterpriseController($http, messagesFcty, tabFtry) {
+    function enterpriseController($http, messagesFcty, tabFtry, apiFtry) {
         const self = this;
-        const url = 'http://localhost:9080/api/enterprise';
+        const srvAPI = apiFtry.srvAPI();
+        const url = srvAPI + 'api/enterprise';
 
         self.refresh = function () {
             $http({

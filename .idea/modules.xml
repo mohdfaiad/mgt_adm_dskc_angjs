@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/mgnt_adm_dskc_angjs.iml" filepath="$PROJECT_DIR$/.idea/mgnt_adm_dskc_angjs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/mgt_adm_dskc_angjs.iml" filepath="$PROJECT_DIR$/.idea/mgt_adm_dskc_angjs.iml" />
     </modules>
   </component>
 </project>

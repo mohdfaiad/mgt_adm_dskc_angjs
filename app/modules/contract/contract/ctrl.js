@@ -5,12 +5,14 @@
             '$http',
             'messagesFtry',
             'tabFtry',
+            'apiFtry',
             contractController
         ]);
 
-    function contractController($http, messagesFcty, tabFtry) {
+    function contractController($http, messagesFcty, tabFtry, apiFtry) {
         const self = this;
-        const url = 'http://localhost:9080/api/contract';
+        const srvAPI = apiFtry.srvAPI();
+        const url = srvAPI + 'api/contract';
 
         self.refresh = function () {
             $http({

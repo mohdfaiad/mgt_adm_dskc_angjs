@@ -5,12 +5,14 @@
             '$http',
             'messagesFtry',
             'tabFtry',
+            'apiFtry',
             dskcloudController
         ]);
 
-    function dskcloudController($http, messagesFcty, tabFtry) {
+    function dskcloudController($http, messagesFcty, tabFtry, apiFtry) {
         const self = this;
-        const url = 'http://localhost:9080/api/dskcloud';
+        const srvAPI = apiFtry.srvAPI();
+        const url = srvAPI + 'api/dskcloud';
 
         self.refresh = function () {
             $http({

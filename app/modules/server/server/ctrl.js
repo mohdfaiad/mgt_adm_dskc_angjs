@@ -5,12 +5,14 @@
             '$http',
             'messagesFtry',
             'tabFtry',
+            'apiFtry',
             serverController
         ]);
 
-    function serverController($http, messagesFcty, tabFtry) {
+    function serverController($http, messagesFcty, tabFtry, apiFtry) {
         const self = this;
-        const url = 'http://localhost:9080/api/server';
+        const srvAPI = apiFtry.srvAPI();
+        const url = srvAPI + 'api/server';
 
         self.refresh = function () {
             $http({

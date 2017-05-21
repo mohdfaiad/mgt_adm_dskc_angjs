@@ -5,12 +5,14 @@
             '$http',
             'messagesFtry',
             'tabFtry',
+            'apiFtry',
             clientController
         ]);
 
-    function clientController($http, messagesFcty, tabFtry) {
+    function clientController($http, messagesFcty, tabFtry, apiFtry) {
         const self = this;
-        const url = 'http://localhost:9080/api/client';
+        const srvAPI = apiFtry.srvAPI();
+        const url = srvAPI + 'api/client';
 
         self.refresh = function () {
             $http({
@@ -36,11 +38,15 @@
                 url: url,
                 data: self.client
             })
-                .then(function () {
+                .then(function (response) {
+                    console.log(response);
+                    console.log(url);
                     self.refresh();
                     messagesFcty.addSuccess('Operacao realizada com sucesso');
                 })
                 .catch(function (response) {
+                    console.log(response);
+                    console.log(url);
                     messagesFcty.addError(response.err)
                 })
         };
