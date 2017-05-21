@@ -38,11 +38,13 @@
                 url: url,
                 data: self.contract
             })
-                .then(function () {
+                .then(function (response) {
+                    console.log(response);
                     self.refresh();
                     messagesFcty.addSuccess('Operacao realizada com sucesso');
                 })
                 .catch(function (response) {
+                    console.log(response);
                     messagesFcty.addError(response.err)
                 })
         };

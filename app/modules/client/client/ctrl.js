@@ -38,14 +38,12 @@
                 url: url,
                 data: self.client
             })
-                .then(function (response) {
-                    console.log(response);
+                .then(function () {
                     console.log(url);
                     self.refresh();
                     messagesFcty.addSuccess('Operacao realizada com sucesso');
                 })
                 .catch(function (response) {
-                    console.log(response);
                     console.log(url);
                     messagesFcty.addError(response.err)
                 })

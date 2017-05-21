@@ -5,7 +5,7 @@
             let address = '';
             return {
                 srvAPI: function () {
-                    address = 'http://192.168.0.11:3080/';
+                    address = 'http://localhost:3080/';
                     return address;
                 }
             }
