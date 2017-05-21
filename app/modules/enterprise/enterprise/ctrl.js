@@ -5,7 +5,7 @@
             '$http',
             'messagesFtry',
             'tabFtry',
-            'apiFtry'.
+            'apiFtry',
             enterpriseController
         ]);
 

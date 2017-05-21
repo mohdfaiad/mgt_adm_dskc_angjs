@@ -18,7 +18,8 @@ gulp.task('deps.js', function () {
     ])
         .pipe(uglify())
         .pipe(concat('deps.min.js'))
-        .pipe(gulp.dest('public/assets/js'))
+        // .pipe(gulp.dest('public/assets/js'))
+        .pipe(gulp.dest('desktopcloud/assets/js'))
 });
 
 gulp.task('deps.css', function () {
@@ -31,7 +32,8 @@ gulp.task('deps.css', function () {
     ])
         .pipe(uglifycss({"uglyComments": true}))
         .pipe(concat('deps.min.css'))
-        .pipe(gulp.dest('public/assets/css'))
+        // .pipe(gulp.dest('public/assets/css'))
+        .pipe(gulp.dest('desktopcloud/assets/css'))
 });
 
 gulp.task('deps.fonts', function () {
@@ -39,5 +41,6 @@ gulp.task('deps.fonts', function () {
         'node_modules/font-awesome/fonts/*.*',
         'node_modules/admin-lte/bootstrap/fonts/*.*'
     ])
-        .pipe(gulp.dest('public/assets/fonts'))
+        // .pipe(gulp.dest('public/assets/fonts'))
+        .pipe(gulp.dest('desktopcloud/assets/fonts'))
 });

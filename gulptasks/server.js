@@ -3,7 +3,8 @@ const watch = require('gulp-watch');
 const webserver = require('gulp-webserver');
 
 gulp.task('server', ['watch'], function () {
-    gulp.src('public')
+    // gulp.src('public')
+    gulp.src('desktopcloud')
         .pipe(webserver({
             livereload: true,
             host: '',
