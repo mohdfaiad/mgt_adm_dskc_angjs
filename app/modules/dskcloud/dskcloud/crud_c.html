@@ -1,7 +1,7 @@
 <div role="form">
     <div class="box box-default">
         <div class="box-header with-border">
-            <h3 class="box-title">dskcloud - Informations</h3>
+            <h3 class="box-title">Contract - Informations</h3>
             <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                 </button>
@@ -12,23 +12,27 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <field-input id="dsk_contract_id"
-                                     placeholder="Contact ID"
+                                     label="Contract ID"
+                                     placeholder="591e6a81d2f1821130072325"
                                      model="dskcCtrl.dskcloud.dsk_contract_id"
                                      readonly="dskcCtrl.tabDelete"></field-input>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
-                        <field-input id="dsk_cli_usr_id"
-                                     placeholder="User ID"
-                                     model="dskcCtrl.dskcloud.dsk_cli_usr_id"
+                        <field-input id="dsk_cli_usr_username"
+                                     label="User ID"
+                                     type="email"
+                                     placeholder="example@domain.com"
+                                     model="dskcCtrl.dskcloud.dsk_cli_usr_username"
                                      readonly="dskcCtrl.tabDelete"></field-input>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
                         <field-input id="dsk_status"
-                                     placeholder="Status: E or D"
+                                     label="Status"
+                                     placeholder="E:Enable D:Disabled"
                                      model="dskcCtrl.dskcloud.dsk_status"
                                      readonly="dskcCtrl.tabDelete"></field-input>
                     </div>
@@ -49,7 +53,8 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         <field-input id="dsk_username"
-                                     placeholder="Username"
+                                     label="Username"
+                                     placeholder="user"
                                      model="dskcCtrl.dskcloud.dsk_username"
                                      readonly="dskcCtrl.tabDelete"></field-input>
                     </div>
@@ -57,8 +62,9 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         <field-input id="dsk_password"
+                                     label="Password"
                                      type="password"
-                                     placeholder="Password"
+                                     placeholder="customer"
                                      model="dskcCtrl.dskcloud.dsk_password"
                                      readonly="dskcCtrl.tabDelete"></field-input>
                     </div>
@@ -66,7 +72,8 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         <field-input id="dsk_address"
-                                     placeholder="Address"
+                                     label="Address"
+                                     placeholder="Ex: 192.168.0.1 or domain.com"
                                      model="dskcCtrl.dskcloud.dsk_address"
                                      readonly="dskcCtrl.tabDelete"></field-input>
                     </div>
@@ -74,8 +81,9 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         <field-input id="dsk_port"
+                                     label="Port"
                                      type="number"
-                                     placeholder="Port"
+                                     placeholder="W:3389 M:4000 L:4000"
                                      model="dskcCtrl.dskcloud.dsk_port"
                                      readonly="dskcCtrl.tabDelete"></field-input>
                     </div>
@@ -83,7 +91,8 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         <field-input id="dsk_system"
-                                     placeholder="System: W, M, L"
+                                     label="System"
+                                     placeholder="W:Windows, M:Mac, L:Linux"
                                      model="dskcCtrl.dskcloud.dsk_system"
                                      readonly="dskcCtrl.tabDelete"></field-input>
                     </div>

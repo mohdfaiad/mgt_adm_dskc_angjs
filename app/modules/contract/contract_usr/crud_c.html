@@ -13,12 +13,12 @@
         <tbody>
         <tr ng-repeat="ctr_usr in ctrCtrl.contract.ctr_usr">
             <td>
-                <input class="form-control input-sm" ng-model="ctr_usr.ctr_usr_name" placeholder="Name"
+                <input class="form-control input-sm" ng-model="ctr_usr.ctr_usr_name" placeholder="Robert Kiyosaki"
                        ng-readonly="ctrCtrl.tabDelete">
             </td>
             <td>
                 <input class="form-control input-sm" type="email" ng-model="ctr_usr.ctr_usr_username"
-                       placeholder="E-mail" ng-readonly="ctrCtrl.tabDelete">
+                       placeholder="example@domain.com" ng-readonly="ctrCtrl.tabDelete">
             </td>
             <td>
                 <input class="form-control input-sm" type="password" ng-model="ctr_usr.ctr_usr_password"
@@ -26,11 +26,11 @@
             </td>
             <td>
                 <input class="form-control input-sm" ng-model="ctr_usr.ctr_usr_date_birth"
-                       placeholder="Date Birth: YYY-MM-DD" ng-readonly="ctrCtrl.tabDelete">
+                       placeholder="YYYY-MM-DD" ng-readonly="ctrCtrl.tabDelete">
             </td>
             <td>
                 <input class="form-control input-sm" type="text" ng-model="ctr_usr.ctr_usr_status"
-                       placeholder="E or D" ng-readonly="ctrCtrl.tabDelete">
+                       placeholder="E:Enable D: Disabled" ng-readonly="ctrCtrl.tabDelete">
             </td>
             <td class="table-actions">
                 <button class="btn btn-success btn-sm" ng-class="{disabled: ctrCtrl.tabDelete}"
